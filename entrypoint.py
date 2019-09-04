@@ -28,8 +28,6 @@ class ExecuteNotebook():
   def get_notebook(self, notebook_name, notebook_version, datalake_id):
     try:
       result = self.api.get_notebook_by_datalake_id_and_version(self.api_key, datalake_id, notebook_name, notebook_version)
-      result = result.replace("'", '"')
-      result = json.loads(result)
       notebook = self.notebook_model_from_db(result)
       content = FileContentsManager()
       content.save(notebook, '/notebook.ipynb')
