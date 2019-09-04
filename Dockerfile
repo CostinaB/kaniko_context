@@ -20,4 +20,4 @@ RUN pip install $PIP_PACKAGES && \
     cd ./bdl_client_python && \
     pip install . && cd /
 
-ENTRYPOINT ["python ./entrypoint.py $API_KEY $API_ENDPOINT"]
+ENTRYPOINT ["python entrypoint.py $API_KEY $API_ENDPOINT"]
